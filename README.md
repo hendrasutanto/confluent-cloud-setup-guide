@@ -1,12 +1,10 @@
-![image](../images/confluent-logo-300-2.png)
+![image](https://github.com/hendrasutanto/examples/blob/7.0.0-post/images/confluent-logo-300-2.png)
 
 # Overview
 
-This Confluent Cloud Quickstart demo is based on the [Confluent Platform Quickstart](https://github.com/confluentinc/examples/tree/7.0.0-post/cp-quickstart)
+This Confluent Cloud setup guide will help you to setup a base cluster in your Confluent Cloud account.
 
-![image](images/quickstart.png)
-
-You can use this quickstart demo to setup Confluent Cloud demo within your Confluent Cloud account.
+![image](https://github.com/hendrasutanto/examples/blob/7.0.0-post/cp-quickstart/images/quickstart.png)
 
 # Prerequisites
 
