@@ -13,7 +13,7 @@ This Confluent Cloud setup guide will help you to setup a base cluster in your C
 * Local install of the [Docker Desktop](https://docs.docker.com/get-docker/).
 * Local install of the [jq](https://github.com/stedolan/jq/wiki/Installation) tool.
 * AWS account - You'll be creating a fully-managed sink connector to an object storage.
-** Setup AWS Access Keys
+  - Setup AWS Access Keys
 
 # Setup
 
