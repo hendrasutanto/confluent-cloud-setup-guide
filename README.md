@@ -66,7 +66,7 @@ Here are the variables and their default values:
 
 ### Cleaning Up
 
-To destroy this demo and its Confluent Cloud resources, call the bash script stop-cloud.sh and pass in the client propoerties file auto-generated in the step above. By Default, this deletes all resources, including the Confluent Cloud environment specified by the service account ID in the configuration file.
+To destroy this demo and its Confluent Cloud resources, call the bash script stop-cloud.sh and pass in the client properties file auto-generated in the step above. By Default, this deletes all resources, including the Confluent Cloud environment specified by the service account ID in the configuration file.
 
 ```bash
 ./stop-cloud.sh stack-configs/java-service-account-<SERVICE_ACCOUNT_ID>.config
@@ -100,3 +100,37 @@ Any Confluent Cloud example uses real Confluent Cloud resources. After you are d
     Your Amazon Access Key ID and Amazon Secret Access Key can be found in your AWS account under your security credentials
 * View the connector, its status, and metrics on the Connectors page.
 * Now let’s check on your S3 bucket. It could take up to 10 minutes before you can see some records in your S3 bucket.
+
+# Step 3 - Observability setup
+
+* Navigate to stack-configs directory and take note of the client properties file (java-service-account-<SERVICE_ACCOUNT_ID>.config) auto-generated in the step above.
+* Switch from cp-quickstart to ccloud-observability by navigate to the examples/ccloud-observability/ directory:
+  ```bash
+  cd examples/ccloud-observability/
+  ```
+* Create Cloud Metrics API Key in Confluent Cloud with the following command:
+  ```bash
+  confluent api-key create --resource cloud --description "confluent-cloud-metrics-api" -o json
+  ```
+* Set up the following environment variables in your local machine. The values can be found in the client properties file (java-service-account-<SERVICE_ACCOUNT_ID>.config).
+  ```bash
+  export CONFIG_FILE=../cp-quickstart/stack-configs/java-service-account-<SERVICE_ACCOUNT_ID>.config
+  export SERVICE_ACCOUNT_ID=<SERVICE_ACCOUNT_ID>
+  export METRICS_API_KEY=<METRICS_API_KEY_GENERATED_IN_PREV_STEP>
+  export METRICS_API_SECRET=<METRICS_API_SECRET_GENERATED_IN_PREV_STEP>
+  export CLOUD_CLUSTER=<KAFKA_CLUSTER_ID>
+  export BOOTSTRAP_SERVERS=<bootstrap.servers>
+  export SASL_JAAS_CONFIG="<sasl.jaas.config>"
+  ```
+  
+  Example:
+  ```bash
+  export CONFIG_FILE=../cp-quickstart/stack-configs/java-service-account-sa-zmyvmz.config
+  export SERVICE_ACCOUNT_ID=sa-zmyvmz
+  export METRICS_API_KEY=BALPMUPYPD3XY72M
+  export METRICS_API_SECRET=dO37qcGR0EXVdKjWXW9sbbxNA4rvfv/V34qMozq0A3cW+mIlX2eJGrVd++hzy46z
+  export CLOUD_CLUSTER=lkc-o0rjp
+  export BOOTSTRAP_SERVERS=pkc-4v1gp.ap-northeast-1.aws.confluent.cloud:9092
+  export SASL_JAAS_CONFIG="org.apache.kafka.common.security.plain.PlainLoginModule required username='VIY3HTXWCIPS37IB' password='MWfwpZJK41KOcyt4pw8w956wUWdwJefEaB8ueZJTPDpzH3p77tTgPMjGTj4AQybK';"
+  ```
+* 
