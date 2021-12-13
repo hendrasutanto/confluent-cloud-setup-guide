@@ -133,4 +133,9 @@ Any Confluent Cloud example uses real Confluent Cloud resources. After you are d
   export BOOTSTRAP_SERVERS=pkc-4v1gp.ap-northeast-1.aws.confluent.cloud:9092
   export SASL_JAAS_CONFIG="org.apache.kafka.common.security.plain.PlainLoginModule required username='VIY3HTXWCIPS37IB' password='MWfwpZJK41KOcyt4pw8w956wUWdwJefEaB8ueZJTPDpzH3p77tTgPMjGTj4AQybK';"
   ```
-* 
+* Stand up docker containers (1 consumer with JMX exporter, 1 producer with JMX exporter, Prometheus, Grafana, a ccloud-exporter, and a node-exporter) with docker compose:
+    ```bash
+  docker-compose up -d
+  ```
+* Navigate to the [Prometheus Targets page](localhost:9090/targets). This page will show you if Prometheus is scraping the targets you have created.
+* It will take up to 3 minutes for data to become visible in Grafana. Open [Grafana](localhost:3000) and use the username "admin" and password "password" to login.
