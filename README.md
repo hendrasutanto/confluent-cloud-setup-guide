@@ -73,3 +73,30 @@ To destroy this demo and its Confluent Cloud resources, call the bash script sto
 ```
 
 Any Confluent Cloud example uses real Confluent Cloud resources. After you are done running a Confluent Cloud example, manually verify that all Confluent Cloud resources are destroyed to avoid unexpected charges.
+
+# Step 2 - Setup S3 Sink connector
+
+* Within Confluent Cloud, click on Connectors. You should see a list of connectors under Fully Managed.
+* Click on Connect for the Amazon S3 Sink.
+* Complete the configuration details.
+
+    | Configuration Setting               | Value                         |
+    |------------------------|-----------------------------------------|
+    | Which topics do you want to get data from? | `ACCOMPLISHED_FEMALE_READERS`                      |
+    | API Key                              | Generate a new API Key with Global access |
+    | API Secret                           | Generate a new API Key with Global access |
+    | Amazon Access Key ID                       | Enter your Amazon Access Key ID                    |
+    | Amazon Secret Anccess Key                  | Enter your Amazon Secret Access Key                |
+    | Bucket Name                                | Enter the name of your bucket/container            |
+    | Input Kafka record value format            | JSON_SR                                            |
+    | Output Message Format                      | AVRO                                               |
+    | Time Interval                              | HOURLY                                             |
+    | Flush Size                                 | 1000                                               |
+    | Max span of record time before scheduled rotation          | 600000                                               |
+    | Max span of record time before rotation                    | 600000                                               |
+    | Tasks                                      | 1                                                  |
+    | Name                                       | Enter any connector name                           |
+
+    Your Amazon Access Key ID and Amazon Secret Access Key can be found in your AWS account under your security credentials
+* View the connector, its status, and metrics on the Connectors page.
+* Now let’s check on your S3 bucket. It could take up to 10 minutes before you can see some records in your S3 bucket.
