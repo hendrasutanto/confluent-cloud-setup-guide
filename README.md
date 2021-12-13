@@ -17,17 +17,13 @@ This Confluent Cloud setup guide will help you to setup a base cluster in your C
   - Bucket Name - Create the object storage and have the name of the bucket ready.
   - Region - Note which region you are deploying your object storage resource in.
   - [IAM policy](https://docs.confluent.io/cloud/current/connectors/cc-s3-sink.html#cc-s3-bucket-policy) configured for bucket access.
-* Clone Confluent's examples [repository](https://github.com/confluentinc/examples.git) to your local machine.
-    ```bash
-    # clone the Confluent examples repository
-    git clone https://github.com/confluentinc/examples.git
-    ```
+* Local install of the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 # Setup
 
 * Clone the examples GitHub repository and check out the 7.0.0-post branch.
 ```bash
-git clone https://github.com/hendrasutanto/examples
+git clone https://github.com/confluentinc/examples.git
 cd examples
 git checkout 7.0.0-post
 ```
@@ -42,17 +38,16 @@ cd cp-quickstart
 confluent login --save
 ```
 
-# Run demo
+# Step 1 - Setup base cluster
 
 ## Confluent Cloud
 
+* Choose the same region where your object storage resource is deployed.
 * This quickstart for Confluent Cloud leverages 100% Confluent Cloud services, including a [ksqlDB application](statements-cloud.sql) which builds streams and tables using Avro, Protobuf and JSON based formats. After logging into the Confluent CLI, run the command below and open your browser navigating to https://confluent.cloud. Note: the demo creates real cloud resources and incurs charges.
 
 ```bash
 ./start-cloud.sh
 ```
-
-* The above command will create a new environment in Confluent Cloud with the name "GSKO". If you have an existing environment with the same name, the script will fail to run.
 
 ### Advanced usage
 
