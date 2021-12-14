@@ -4,7 +4,7 @@
 
 This Confluent Cloud setup guide will help you to setup a base cluster in your Confluent Cloud account.
 
-![image](https://github.com/hendrasutanto/examples/blob/7.0.0-post/cp-quickstart/images/quickstart.png)
+![image](architecture-diagram.png)
 
 # Prerequisites
 
