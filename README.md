@@ -137,5 +137,5 @@ Any Confluent Cloud example uses real Confluent Cloud resources. After you are d
     ```bash
   docker-compose up -d
   ```
-* Navigate to the [Prometheus Targets page](localhost:9090/targets). This page will show you if Prometheus is scraping the targets you have created.
-* It will take up to 3 minutes for data to become visible in Grafana. Open [Grafana](localhost:3000) and use the username "admin" and password "password" to login.
+* Navigate to the [Prometheus Targets page](localhost:9090/targets) (localhost:9090/targets). This page will show you if Prometheus is scraping the targets you have created.
+* It will take up to 3 minutes for data to become visible in Grafana. Open [Grafana](localhost:3000) (localhost:3000) and use the username "admin" and password "password" to login.
