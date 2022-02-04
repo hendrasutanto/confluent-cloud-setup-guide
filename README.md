@@ -145,7 +145,8 @@ Any Confluent Cloud example uses real Confluent Cloud resources. After you are d
 # 1 - Producer container keeps restarting
 
 * Upon inspecting the log, you found an error message similar to the following:
-```[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli) on project clients-example: An exception occured while executing the Java class. null: InvocationTargetException: /tmp/client.config (Is a directory) -> [Help 1]
+```bash
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli) on project clients-example: An exception occured while executing the Java class. null: InvocationTargetException: /tmp/client.config (Is a directory) -> [Help 1]
 ```
 * Please inspect the container environment and verify that the "/TMP/CLIENT.CONFIG" is pointing to the "stack-config" file.
 * You can copy the value of the "/TMP/CLIENT.CONFIG" and issue a "cat" command to quickly verify that the file path is correct.
