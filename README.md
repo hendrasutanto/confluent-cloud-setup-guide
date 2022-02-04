@@ -142,7 +142,7 @@ Any Confluent Cloud example uses real Confluent Cloud resources. After you are d
 
 # Troubleshooting
 
-# 1 - Producer container keeps restarting
+# Issue #1 - Producer container keeps restarting
 
 * Upon inspecting the log, you found an error message similar to the following:
   ```bash
