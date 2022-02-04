@@ -148,11 +148,11 @@ Any Confluent Cloud example uses real Confluent Cloud resources. After you are d
   ```bash
   [ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli) on project clients-example: An exception occured while executing the Java class. null: InvocationTargetException: /tmp/client.config (Is a directory) -> [Help 1]
   ```
-* Please inspect the container environment and verify that the "/TMP/CLIENT.CONFIG" is pointing to the "stack-config" file.
-* You can copy the value of the "/TMP/CLIENT.CONFIG" and issue a "cat" command to quickly verify that the file path is correct.
+* Please inspect the container environment and verify that the "/TMP/CLIENT.CONFIG" points to the "stack-config" file.
+* You can copy the value of the "/TMP/CLIENT.CONFIG" and issue a "cat" command to verify the file path.
   ```bash
   cat <VALUE_FROM_/TMP/CLIENT.CONFIG>
   ```
-* Your environment should look similar to the following example
+* Your environment should look similar to the following example:
 
 ![image](docker-environment-example.png)
