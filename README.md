@@ -86,7 +86,7 @@ Any Confluent Cloud example uses real Confluent Cloud resources. After you are d
     | API Key                              | Generate a new API Key with Global access |
     | API Secret                           | Generate a new API Key with Global access |
     | Amazon Access Key ID                       | Enter your Amazon Access Key ID                    |
-    | Amazon Secret Anccess Key                  | Enter your Amazon Secret Access Key                |
+    | Amazon Secret Access Key                   | Enter your Amazon Secret Access Key                |
     | Bucket Name                                | Enter the name of your bucket/container            |
     | Input Kafka record value format            | JSON_SR                                            |
     | Output Message Format                      | AVRO                                               |
